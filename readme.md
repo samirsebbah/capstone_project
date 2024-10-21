@@ -10,7 +10,7 @@ $\ldots$ [extracted from project page on Kaggle](https://www.kaggle.com/competit
 
 
 <div style="text-align: center;">
-<img src="figures /leapdata.jpg" alt="Alt text" width="500"/>
+<img src="figures/leapdata.jpg" alt="Alt text" width="500"/>
 <p align="center"><b>Figure 1: Climate prediction</b></p>
 </div>
 
@@ -711,6 +711,7 @@ climsim % tree .
 │   ├── modelloss.png
 │   └── r2.png
 ├── inputs
+│   ├── linktosharedinput.txt link to download Gdrive file
 │   ├── composit_feature_pbuf_CH4_df2.parquet
 │   ├── composit_feature_pbuf_N2O_df2.parquet
 │   ├── composit_feature_pbuf_ozone_df2.parquet

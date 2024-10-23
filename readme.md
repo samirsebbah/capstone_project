@@ -111,9 +111,9 @@ The below analysis is to performance some statistical analysis to study the data
 
 
 In this section, 
-we develop plots to visualize the distributions of the input featurs using Histograms. Our objective to gain better understanding of the underlying patterns, detecting outliers, and identifying potential issues. This step is also used in subsequent steps to guide feature engineering, model selection, and preprocessing steps.
+we develop plots to visualize the distributions of the input features using Histograms. Our objective to gain better understanding of the underlying patterns, detecting outliers, and identifying potential issues. This step is also used in subsequent steps to guide feature engineering, model selection, and preprocessing steps.
 
-Per composite feature, the plots show the distribtions of the features. 
+Per composite feature, the plots show the distributions of the features. 
 To keep this document concise, we did not report all the composite features. The next set of boxplots provides a better visuals of the aggregated statistics about the distributions of the features. 
 
 <div style="text-align: center;">
@@ -138,14 +138,14 @@ To keep this document concise, we did not report all the composite features. The
 
 
 #### Observations
-Looking thru the sampled data we notice
+Looking through the sampled data, we notice
 
-1. Domains of the different distributions span different ranges even within the same composite features
-2. Within the same composite features, some features seem to have the same data distribution - indicator of correlations
-3. Within each of the composite feature, almost all the distributions are left/right skewed. 
-4. Some features seem to have domains with very low values (close to zero) compare to others
+1. Domains of the different distributions span different ranges even within the same composite features.
+2. Within the same composite features, some features seem to have the same data distribution - indicator of correlations.
+3. Within each of the composite features, almost all the distributions are left/right skewed. 
+4. Some features seem to have domains with very low values (close to zero) compared to others.
 
-### Feature correaltion analysis
+### Feature correlation analysis
 The purpose of this analysis step is to understand the relationships between the features within our composite features in the dataset. Highly correlated features may provide redundant information, and weakly correlated features might suggest a lack of relationship. This analysis is important in feature selection and can also help identify multicollinearity in your data.
 
 The plots below report the distributions of the correlations
@@ -168,7 +168,7 @@ coefficients between the features of each composite feature.
 
 #### Observations
 
-Looking thru the sampled data we notice
+Looking through the sampled data we notice
 
 1. Within each composite feature, the correlation plots show strong correlations among the features of some composite features
 2. Within each composite feature, most of the strong correlations (>0.98) are positive
@@ -250,7 +250,7 @@ The number of principal components selected: 10
 ### Observations
 1. The pca model picked more components to achieve 98% variability within composite features with low correlations, e.g., state_q0002
 2. The pca model picked a very low percent of features to achieve 98% variability within composite features with high correlations, e.g., pbuf_CH4, pbuf_N20
-3. Overall, the PCA model achieved high dimensionality reduction across all compoist features.
+3. Overall, the PCA model achieved high dimensionality reduction across all composite features.
 
 
 
@@ -259,18 +259,18 @@ The number of principal components selected: 10
 
 ### More opportunities
 
-1. Adopt a scaling cusomized for each of the composite features. The data distributions are different, some distrbutions are nearing zero and bearily visible on the plots.
+1. Adopt a scaling customized for each of the composite features. The data distributions are different, some distrbutions are nearing zero and barely visible on the plots.
 2. Outliers are present in every measure, finding a strategy to handle those in order to bring more stability to the learning process in the ML model
 
 ## Data processing architecture
 
-We used Google drive and Colab as the development enviorment in the data processing steps. Google drive offer storage and APIs to pulled Kaggle data and store large amount of data and access it during development.  
+We used Google drive and Colab as the development environment in the data processing steps. Google drive offer storage and APIs to pulled Kaggle data and store large amount of data and access it during development.  
 
 The diagram below highlights the different components of the data processing step.
 1. raw data is pulled from Kaggle into Google drive
 2. After sampling, scaling and PCA models are build for each composite features.
 3. The scaling and pca models are saved after training
-4. The PCs of the scaled data are saved for busequent modeling steps
+4. The PCs of the scaled data are saved for subsequent modeling steps
 
 <div style="text-align: center;">
 <img src="figures/dataarchitecture.jpg" alt="architecture" width="500"/>
@@ -667,7 +667,7 @@ The deployed app was tested with the provided payload in the repo. The predictio
     2. PCA
     3. Scaling
 7. notebooks
-    1. EDA for Exploratory data anaylsis 
+    1. EDA for Exploratory data analysis 
     2. LeapSimModeling for the main MLP model
     3. LeapSimModelingOptimization for hyperparameter tunning 
 7. payload.json: a payload for testing
